@@ -1,0 +1,82 @@
+name: Bug report
+description: Something does not work as expected
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! The more details you give, the faster it can be fixed.
+        Please attach your `latest.log` (or a link to it).
+  - type: input
+    id: mod_version
+    attributes:
+      label: Mod version
+      description: The full version from the file name.
+      placeholder: "1.0.0+26.2"
+    validations:
+      required: true
+  - type: input
+    id: minecraft_version
+    attributes:
+      label: Minecraft version
+      placeholder: "26.2"
+    validations:
+      required: true
+  - type: input
+    id: loader_versions
+    attributes:
+      label: Fabric Loader and Fabric API versions
+      placeholder: "Loader 0.19.3, Fabric API 0.152.2+26.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where does it happen?
+      options:
+        - Singleplayer
+        - Multiplayer, on the client
+        - Multiplayer, on the dedicated server
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: other_mods
+    attributes:
+      label: Other mods installed
+      description: Especially Mod Menu, Cloth Config, and anything that touches compasses, commands or the action bar.
+    validations:
+      required: false
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log
+      description: Paste a link (for example from mclo.gs) or the relevant part of `latest.log`. Crash reports go in here too.
+      render: shell
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before sending
+      options:
+        - label: I searched the existing issues and this was not reported yet
+          required: true
